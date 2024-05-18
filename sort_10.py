@@ -2,21 +2,21 @@ import random
 
 a = []
 orig = []
-prompt = input("Enter 10 numerical values to list?(y/n): ")
+prompt = input("Ввести 10 чисел у масив?(y/n): ")
 if prompt == "y":
     while len(a) < 10:
         try:
-            a.append(int(input(f"Add value to list(#{len(a)+1}): ")))
-            orig.append(int(input(f"Add value to list(#{len(a)+1}): ")))
+            a.append(int(input(f"Додайте значення(#{len(a)+1}): ")))
+            orig.append(int(input(f"Додайте значення(#{len(a)+1}): ")))
         except ValueError:
-            print("Please enter a number value.")
+            print("Будь ласка введіть, числове значення.")
 elif prompt == "n":
     for r in range(10):
         rand = random.randint(-10, 100)
         a.append(rand)
         orig.append(rand)
 
-print(f"Here is your array: {a}")
+print(f"Вот ваш масив: {a}")
 
 
 def bubble_sort(arr):
@@ -54,11 +54,11 @@ def merge(larr, rarr):  # sort the sublists and merge them
     return q + larr + rarr
 
 
-prompt = input("Do you wish to sort it using a bubble sort or a merge sort algorythm?(b/m): ")
+prompt = input("Посортувати за допомогою bubble sort чи merge sort алгоритму?(b/m): ")
 
 
 if prompt == "b":
-    print(f"\nOriginal array: {orig}\nSorted array: {bubble_sort(a)}")
+    print(f"\nOригінальний масив: {orig}\nВідсортований масив: {bubble_sort(a)}")
 if prompt == "m":
-    print(f"\nOriginal array: {orig}\nSorted array: {merge_sort(a)}")
+    print(f"\nOригінальний масив: {orig}\nВідсортований масив: {merge_sort(a)}")
 
